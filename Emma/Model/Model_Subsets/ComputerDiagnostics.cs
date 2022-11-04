@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Emma.Model.Model_Subsets
+{
+    public class ComputerDiagnostics
+    {
+        public string display="0";
+    }
+    
+}
