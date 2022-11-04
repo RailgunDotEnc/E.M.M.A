@@ -1,0 +1,381 @@
+1:03 PM: Starting run
+1:03 PM: Wifi Check
+1:03 PM: Start
+1:03 PM: Check api ping
+1:03 PM: Start listening aciton
+1:03 PM: Wifi Check
+1:03 PM: no sound
+1:03 PM: Error[No Sound]
+1:03 PM: Sleeping
+1:03 PM: Wifi Check
+
+1:04 PM: Starting run
+1:04 PM: Wifi Check
+1:04 PM: Start
+1:04 PM: Check api ping
+1:04 PM: Start listening aciton
+1:04 PM: Wifi Check
+1:04 PM: no sound
+1:04 PM: Error[No Sound]
+
+1:05 PM: Starting run
+1:05 PM: Wifi Check
+1:05 PM: Start
+1:05 PM: Check api ping
+1:05 PM: Start listening aciton
+1:05 PM: Wifi Check
+1:05 PM: no sound
+1:05 PM: Error[No Sound]
+
+1:22 PM: Starting run
+1:22 PM: Wifi Check
+1:22 PM: Start
+1:22 PM: Check api ping
+1:22 PM: Start listening aciton
+1:22 PM: Wifi Check
+1:22 PM: Wifi Check
+1:22 PM: {"message":"sophia and kenzie."}
+1:22 PM: Wifi Check
+1:22 PM: End
+1:22 PM: Wifi Check
+1:22 PM: Start
+1:22 PM: Check api ping
+1:22 PM: Start listening aciton
+1:22 PM: Wifi Check
+1:22 PM: {"message":"No Sound"}
+1:22 PM: Wifi Check
+1:22 PM: End
+1:22 PM: Wifi Check
+1:22 PM: Start
+1:22 PM: Check api ping
+1:22 PM: Start listening aciton
+
+1:24 PM: Starting run
+1:24 PM: Wifi Check
+1:24 PM: Start
+1:24 PM: Check api ping
+1:24 PM: Start listening aciton
+1:24 PM: Wifi Check
+1:24 PM: Wifi Check
+1:24 PM: {"message":"No Sound"}
+1:24 PM: Wifi Check
+
+1:25 PM: Starting run
+1:25 PM: Wifi Check
+1:25 PM: Start
+1:25 PM: Check api ping
+1:25 PM: Start listening aciton
+1:25 PM: Wifi Check
+1:25 PM: {"message":"what"}
+
+1:27 PM: Starting run
+1:27 PM: Wifi Check
+1:27 PM: Start
+1:27 PM: Check api ping
+1:27 PM: Start listening aciton
+1:27 PM: Wifi Check
+1:27 PM: Wifi Check
+1:27 PM: {"message":"No Sound"}
+
+1:28 PM: Starting run
+1:28 PM: Wifi Check
+1:28 PM: Start
+1:28 PM: Check api ping
+1:28 PM: Start listening aciton
+1:28 PM: Wifi Check
+1:28 PM: {"message":"No Sound"}
+1:28 PM: Wifi Check
+1:28 PM: Error[No Sound]
+1:28 PM: Sleeping
+1:28 PM: Wifi Check
+1:28 PM: Wifi Check
+1:28 PM: Program closed
+
+1:30 PM: Starting run
+1:30 PM: Wifi Check
+1:30 PM: Start
+1:30 PM: Check api ping
+1:30 PM: No connection could be made because the target machine actively refused it. [::ffff:10.150.184.3]:4000 (10.150.184.3:4000)
+1:30 PM: Start listening aciton
+1:30 PM: Wifi Check
+1:30 PM: Error[Fail to connect to api]
+1:30 PM: Sleeping
+
+1:40 PM: Starting run
+1:40 PM: Wifi Check
+1:40 PM: Start
+1:40 PM: Check api ping
+1:40 PM: No connection could be made because the target machine actively refused it. [::ffff:10.150.184.3]:4000 (10.150.184.3:4000)
+1:40 PM: Start listening aciton
+1:40 PM: Wifi Check
+1:40 PM: Error[Fail to connect to api]
+1:40 PM: Sleeping
+
+1:41 PM: Starting run
+1:41 PM: Wifi Check
+1:41 PM: Start
+1:41 PM: Check api ping
+1:41 PM: Start listening aciton
+1:41 PM: Wifi Check
+1:41 PM: Wifi Check
+1:41 PM: Wifi Check
+1:41 PM: {"message":"nightmare stuff of"}
+1:41 PM: End
+1:41 PM: Wifi Check
+1:41 PM: Start
+1:41 PM: Check api ping
+1:41 PM: Start listening aciton
+1:41 PM: Wifi Check
+1:41 PM: Wifi Check
+1:41 PM: {"message":"the family is one of the following snacks if you want to use the ip"}
+
+1:42 PM: Starting run
+1:42 PM: Check time
+1:42 PM: Wifi Check
+
+1:42 PM: Starting run
+1:42 PM: Check time
+1:42 PM: Wifi Check
+
+1:43 PM: Starting run
+1:43 PM: Wifi Check
+1:43 PM: Check time
+1:43 PM: Wifi Check
+
+1:44 PM: Starting run
+1:44 PM: Check time
+1:44 PM: Wifi Check
+1:44 PM: Wifi Check
+
+1:45 PM: Starting run
+1:45 PM: Wifi Check
+1:45 PM: Check time
+
+1:46 PM: Starting run
+1:46 PM: Wifi Check
+1:46 PM: Check time
+
+1:46 PM: Starting run
+1:46 PM: Wifi Check
+1:46 PM: Check time
+1:46 PM: Start
+1:46 PM: Check api ping
+1:46 PM: Start listening aciton
+1:46 PM: Wifi Check
+
+1:48 PM: Starting run
+1:48 PM: Wifi Check
+1:48 PM: Check time
+
+1:48 PM: Starting run
+1:48 PM: Check time
+1:48 PM: Wifi Check
+
+1:49 PM: Starting run
+1:49 PM: Check time
+1:49 PM: Wifi Check
+1:49 PM: Wifi Check
+1:49 PM: Start
+1:49 PM: Check api ping
+1:49 PM: Start listening aciton
+1:49 PM: Program closed
+1:49 PM: 
+
+1:53 PM: Starting run
+1:53 PM: Check time
+1:53 PM: Wifi Check
+1:53 PM: Start
+1:53 PM: Check api ping
+1:53 PM: Wifi Check
+1:53 PM: Wifi Check
+1:53 PM: Check time
+1:53 PM: Wifi Check
+1:53 PM: Wifi Check
+
+1:54 PM: Starting run
+1:54 PM: Wifi Check
+1:54 PM: Check time
+1:54 PM: Start
+1:54 PM: Check api ping
+1:54 PM: Wifi Check
+1:54 PM: Wifi Check
+1:54 PM: Check time
+1:54 PM: Wifi Check
+1:54 PM: Wifi Check
+1:54 PM: Wifi Check
+
+1:59 PM: Starting run
+1:59 PM: Wifi Check
+1:59 PM: Check time
+1:59 PM: Start
+1:59 PM: Starting Tasks
+1:59 PM: Check api ping
+1:59 PM: Wifi Check
+1:59 PM: Program closed
+
+1:59 PM: Starting run
+1:59 PM: Wifi Check
+1:59 PM: Check time
+1:59 PM: Start
+1:59 PM: Starting Tasks
+1:59 PM: Check api ping
+1:59 PM: Wifi Check
+1:59 PM: Wifi Check
+1:59 PM: Wifi Check
+1:59 PM: Check time
+1:59 PM: Wifi Check
+
+2:00 PM: Starting run
+2:00 PM: Check time
+2:00 PM: Wifi Check
+2:00 PM: Start
+2:00 PM: Starting Tasks
+2:00 PM: Check api ping
+2:00 PM: Wifi Check
+2:00 PM: Wifi Check
+2:00 PM: Check time
+2:00 PM: Wifi Check
+
+2:01 PM: Starting run
+2:01 PM: Wifi Check
+2:01 PM: Check time
+2:01 PM: Start
+2:01 PM: Starting Tasks
+2:01 PM: Check api ping
+2:01 PM: Wifi Check
+2:01 PM: Wifi Check
+2:01 PM: Check time
+2:01 PM: Wifi Check
+2:01 PM: Wifi Check
+
+2:03 PM: Starting run
+2:03 PM: Wifi Check
+2:03 PM: Check time
+2:03 PM: Start
+2:03 PM: Starting Tasks
+2:03 PM: Check api ping
+2:03 PM: Wifi Check
+
+2:04 PM: Starting run
+2:04 PM: Check time
+2:04 PM: Wifi Check
+2:04 PM: Start
+2:04 PM: Starting Tasks
+2:04 PM: Check api ping
+2:04 PM: Wifi Check
+2:04 PM: Wifi Check
+2:04 PM: Wifi Check
+2:04 PM: Wifi Check
+
+2:07 PM: Starting run
+2:07 PM: Check time
+2:07 PM: Wifi Check
+2:07 PM: Start
+2:07 PM: Starting Tasks
+2:07 PM: Check api ping
+2:07 PM: Wifi Check
+2:07 PM: Wifi Check
+2:07 PM: Wifi Check
+2:07 PM: Check time
+2:07 PM: Wifi Check
+
+2:08 PM: Starting run
+2:08 PM: Wifi Check
+2:08 PM: Check time
+2:08 PM: Wifi Check
+2:08 PM: Start
+2:08 PM: Starting Tasks
+2:08 PM: Check api ping
+2:08 PM: Wifi Check
+2:08 PM: Wifi Check
+
+2:09 PM: Starting run
+2:09 PM: Wifi Check
+2:09 PM: Check time
+2:09 PM: Start
+2:09 PM: Starting Tasks
+2:09 PM: Check api ping
+2:09 PM: Wifi Check
+2:09 PM: Wifi Check
+
+2:11 PM: Starting run
+2:11 PM: Check time
+2:11 PM: Wifi Check
+2:11 PM: Start
+2:11 PM: Starting Tasks
+2:11 PM: Check api ping
+2:11 PM: Wifi Check
+
+5:24 PM: Starting run
+5:24 PM: Wifi Check
+5:24 PM: Check time
+5:24 PM: Start
+5:24 PM: Starting Tasks
+5:24 PM: Check api ping
+5:24 PM: Wifi Check
+5:24 PM: Wifi Check
+
+5:25 PM: Starting run
+5:25 PM: Check time
+5:25 PM: Wifi Check
+5:25 PM: Start
+5:25 PM: Starting Tasks
+5:25 PM: Check api ping
+5:25 PM: Wifi Check
+5:25 PM: Check time
+5:25 PM: Wifi Check
+5:25 PM: Start listening aciton
+5:25 PM: Wifi Check
+5:25 PM: Program closed
+5:25 PM: 
+
+5:29 PM: Starting run
+5:29 PM: Wifi Check
+5:29 PM: Check time
+5:29 PM: Start
+5:29 PM: Starting Tasks
+5:29 PM: Check api ping
+5:29 PM: Wifi Check
+5:29 PM: Start listening aciton
+5:29 PM: Wifi Check
+5:29 PM: {"message":"No Sound"}
+5:29 PM: Error[No Sound]
+5:29 PM: Wifi Check
+5:29 PM: Check time
+5:29 PM: Done with Tasks
+5:29 PM: Sleeping
+5:29 PM: Wifi Check
+5:29 PM: Wifi Check
+5:29 PM: Check time
+5:29 PM: Wifi Check
+5:29 PM: Wifi Check
+5:29 PM: Check time
+5:29 PM: Wifi Check
+5:29 PM: Wifi Check
+5:29 PM: Check time
+5:29 PM: Wifi Check
+5:29 PM: Wifi Check
+
+5:37 PM: Starting run
+5:37 PM: Check time
+5:37 PM: Wifi Check
+5:37 PM: Start
+5:37 PM: Starting Tasks
+5:37 PM: Check api ping
+5:37 PM: Start listening aciton
+5:37 PM: Wifi Check
+5:37 PM: {"message":"No Sound"}
+5:37 PM: Error[No Sound]
+5:37 PM: Done with Tasks
+5:37 PM: Sleeping
+
+5:45 PM: Starting run
+5:45 PM: Check time
+5:45 PM: Wifi Check
+5:45 PM: Start
+5:45 PM: Starting Tasks
+5:45 PM: Check api ping
+5:45 PM: Start listening aciton
+5:45 PM: Wifi Check
+5:45 PM: Program closed
+5:45 PM: 

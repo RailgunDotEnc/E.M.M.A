@@ -1,0 +1,8 @@
+startUp:true
+emailCheck:true
+weather:true
+orginizeFolder:false
+saveRunData:false
+reminder:false
+listeningAttempts:1
+volume:30

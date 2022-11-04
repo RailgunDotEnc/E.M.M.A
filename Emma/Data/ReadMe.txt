@@ -1,0 +1,1 @@
+This folder jsut stores data about the program
