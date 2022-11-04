@@ -33,6 +33,8 @@ namespace Emma.ViewModels
             //Connect Runtime data and property update
             App.basemodel.runtimedata.addpropertyclass(Property);
             App.basemodel.runtimedata.UpdateDiagnostics();
+            //Connect Weather data and property update
+            App.basemodel.weather.addpropertyclass(Property);
             //Connect Wifi Data and property update
             App.basemodel.Wifi_Data.addpropertyclass(Property);
             App.basemodel.Wifi_Data.check_wifi();

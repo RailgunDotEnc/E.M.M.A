@@ -11,6 +11,7 @@ namespace Emma.ViewModels.Commands
         private string _time=App.basemodel.runtimedata.time;
         private BitmapImage? _wifi = null;
         private BitmapImage? _listening = null;
+        private BitmapImage? _weather_image = null;
         private Visibility _menu = Visibility.Visible;
         private BitmapImage? _menu_image = new BitmapImage(new Uri("/Emma;component/images/frame.png", UriKind.Relative));
         
@@ -96,7 +97,21 @@ namespace Emma.ViewModels.Commands
                 OnPropertyChanged("Menu_Image");
             }
         }
+        public BitmapImage Weatehr_Image
+        {
+            get
+            {
+                if (_weather_image == null)
+                    return new BitmapImage(new Uri("/Emma;component/images/icons/temp.png", UriKind.Relative));
+                return new BitmapImage(new Uri("/Emma;component/images/icons/rain.png", UriKind.Relative));
+            }
+            set
+            {
+                _weather_image = value;
+                OnPropertyChanged("Weatehr_Image");
+            }
+        }
 
-        
+
     }
 }

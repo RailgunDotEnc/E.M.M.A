@@ -129,13 +129,19 @@ namespace Emma.Model.Main
             else if (command.Contains("kill") || command.Contains("close"))
             {
                 string killprogram = "";
+                string commandsub = command.Substring(command.IndexOf("kill")+5);
+
                 for (int i = 0; i < App.basemodel.runtimedata.RunningExe.Count; i++)
                 {
-                    if (command.Contains(App.basemodel.runtimedata.RunningExe[i]))
-                        killprogram = App.basemodel.runtimedata.RunningExe[i];
-                    App.basemodel.text_box.set_speech("Killed Program: " + killprogram);
-                    System.Diagnostics.Process.Start("CMD.exe", "/C taskkill /IM " + killprogram + ".exe /F");
-                    return true;
+                    killprogram = App.basemodel.runtimedata.RunningExe[i];
+                    if (commandsub.Contains(killprogram.ToLower()))
+                    {
+                        App.basemodel.text_box.set_speech("Killed Program: " + killprogram);
+                        string test = "/C taskkill /IM " + killprogram + ".exe /F";
+                        System.Diagnostics.Process.Start("CMD.exe", "/C taskkill /IM " + killprogram + ".exe /F");
+                        return true;
+                    }
+                    
                 }
                 App.basemodel.text_box.set_speech("Could not kill program ...");
                 return false;

@@ -38,7 +38,7 @@
                     x:Name="Mode"
                     Width="30"  
                     Margin="2" 
-                    Source="/images/icons/temp.png"
+                    Source="{Binding Property.Weatehr_Image}"
                     />
             </Button>
 

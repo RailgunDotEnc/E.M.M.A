@@ -15,6 +15,7 @@ namespace Emma.Model
         public API_Call speech_text { get; private set; }
         public TextBox text_box { get; private set; }
         public settings Emmasettings { get; private set; }
+        public Weather weather { get; private set; }
         #endregion
 
         //Constructor
@@ -29,6 +30,7 @@ namespace Emma.Model
             animation=new Animation();
             speech_text = new API_Call(runtimedata.directroy);
             text_box = new TextBox();
+            weather = new Weather(speech_text,runtimedata.directroy);
         }
 
     }

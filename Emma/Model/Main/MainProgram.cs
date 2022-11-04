@@ -4,7 +4,6 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Threading;
 
 namespace Emma.Model.Main
 {
@@ -243,7 +242,7 @@ namespace Emma.Model.Main
             }
         }
 
-        //Check time
+        //Check time/Cycle Small task
         public async void time_loop()
         {
             string temp;
@@ -257,31 +256,16 @@ namespace Emma.Model.Main
                     emma_sleeping = Current.runtimedata.emma_sleeping;
                     if (Current.runtimedata.emma_running == false)
                         break;
-                    await check_weather();
+                    try
+                    {
+                        await Current.weather.updateWeather();
+                    }
+                    catch(Newtonsoft.Json.JsonReaderException) { }
                 }
                 else break;
                 
                 await Task.Delay(10000);
             }
-        }
-
-        //Check weather
-        public async Task check_weather() {
-            API_Call API= new API_Call(Current.runtimedata.directroy);
-            Thread weather = new Thread(API.Weather);
-            string check;
-            weather.Start();
-            while (true)
-            {
-                check = API.GetResponse();
-                if (check != null)
-                { break; }
-                await Task.Delay(100);
-            }
-
-            dynamic hold = JsonConvert.DeserializeObject(check);
-            weather = null;
-            return;
         }
 
         //Check api
