@@ -7,7 +7,6 @@ This program is currently just a virtual assistant. The goal of the project is t
 
 
 (Goals)
-
 -There are not real goals for the project. The reason I created it was to test out things I have learned in my few years of coding. 
 -Have the speech to text feature be always active instead of calling an API
 -Update the GUI to have a continuous animation for Emma
