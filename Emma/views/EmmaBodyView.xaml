@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="Emma.views.EmmaBodyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Emma.views"
+             mc:Ignorable="d" 
+             d:DesignHeight="515"
+              Width="175">
+    <Grid>
+        <!-- Images -->
+        <Image       
+            x:Name="Emma"
+            Source="{Binding Images.EmmasImage}"
+            MouseDown="Emma_MouseDown"
+            Grid.Column="0" 
+            Margin="12,-10,12,10"
+            />
+    </Grid>
+</UserControl>

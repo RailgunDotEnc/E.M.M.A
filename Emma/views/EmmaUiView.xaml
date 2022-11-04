@@ -1,0 +1,104 @@
+﻿<UserControl
+    x:Class="Emma.views.EmmaUiView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Emma.views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="175"
+    d:DesignHeight="515"
+    mc:Ignorable="d">
+    <Grid>
+        <Image
+            Width="45"
+            Margin="130,-71,0,71"
+            Source="{Binding Property.Menu_Image}" />
+        <StackPanel
+            x:Name="Menu"
+            Height="auto"
+            Margin="130,0,0,142"
+            Visibility="{Binding Property.Menu}">
+            <Button Command="{Binding CC}">
+                <Image
+                    x:Name="Close_Button"
+                    Width="35"
+                    Margin="2"
+                    Source="/images/icons/close_window.png" />
+            </Button>
+            <Button Command="{Binding Min}" MouseLeave="Button_MouseLeave_1">
+                <Image
+                    x:Name="Min_Button"
+                    Width="30"
+                    Margin="2"
+                    MouseDown="Image_MouseDown_1"
+                    Source="/images/icons/minimize.png" />
+            </Button>
+            <Button Height="36">
+                <Image 
+                    x:Name="Mode"
+                    Width="30"  
+                    Margin="2" 
+                    Source="/images/icons/temp.png"
+                    />
+            </Button>
+
+            <Image
+                x:Name="Listening"
+                Width="30"
+                Margin="2"
+                Source="{Binding Property.Listening}" />
+            <Button Command="{Binding OF}" MouseLeave="Button_MouseLeave_2">
+                <Image
+                    x:Name="Folder_Button"
+                    Width="30"
+                    Margin="2"
+                    MouseDown="Image_MouseDown_2"
+                    Source="/images/icons/folder.png" />
+            </Button>
+            <Button Command="{Binding OMem}" MouseLeave="Button_MouseLeave_3">
+                <Image
+                    x:Name="Mem_Button"
+                    Width="35"
+                    Margin="2"
+                    MouseDown="Image_MouseDown_3"
+                    Source="/images/icons/memory.png" />
+            </Button>
+            <Button Command="{Binding OSettings}" MouseLeave="Button_MouseLeave_4">
+                <Image
+                    x:Name="Settings_Button"
+                    Width="30"
+                    Margin="2"
+                    MouseDown="Image_MouseDown_4"
+                    Source="/images/icons/Settings.png" />
+            </Button>
+
+            <Image
+                Width="30"
+                Margin="2"
+                Source="{Binding Property.Wifi}" />
+
+            <TextBlock
+                Margin="0,5,0,0"
+                HorizontalAlignment="Center"
+                FontStyle="Italic"
+                Text="{Binding Property.Display, StringFormat=Dis: {0}}" />
+
+        </StackPanel>
+        <Button Command="{Binding MenuB}">
+            <Image
+                x:Name="Menu_Button"
+                Margin="128,324,0,163"
+                MouseDown="Button_MouseDown"
+                RenderTransformOrigin="0.496,0.486"
+                Source="/images/icons/close_frame.png" />
+        </Button>
+        <TextBlock
+            Width="45"
+            Margin="132,357,0,145"
+            HorizontalAlignment="Left"
+            FontSize="10"
+            Text="{Binding Property.Time}"
+            TextWrapping="Wrap" />
+
+    </Grid>
+</UserControl>
