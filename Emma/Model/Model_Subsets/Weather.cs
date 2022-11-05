@@ -1,8 +1,10 @@
 ﻿using Emma.API;
 using Emma.ViewModels.Commands;
 using Newtonsoft.Json;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace Emma.Model.Model_Subsets
 {
@@ -14,6 +16,14 @@ namespace Emma.Model.Model_Subsets
         public int tempC=-100;
         public int tempF=-100;
         public string Directory;
+        public string last_weather="";
+        //Image icons for weather
+        public BitmapImage cloud= new BitmapImage(new Uri("/Emma;component/images/icons/cloudy.png", UriKind.Relative));
+        public BitmapImage sun = new BitmapImage(new Uri("/Emma;component/images/icons/sunny.png", UriKind.Relative));
+        public BitmapImage snow=new BitmapImage(new Uri("/Emma;component/images/icons/snow.png", UriKind.Relative));
+        public BitmapImage rain= new BitmapImage(new Uri("/Emma;component/images/icons/rain.png", UriKind.Relative));
+        public BitmapImage thunder= new BitmapImage(new Uri("/Emma;component/images/icons/thunderstorm.png", UriKind.Relative));
+
         public API_Call API;
         private PropertyUpdate propertyupdate;
 
@@ -52,10 +62,49 @@ namespace Emma.Model.Model_Subsets
             tempK = double.Parse(holdtemp);
             tempC = (int)(tempK - 273.15);
             tempF = (int)((tempK - 273.15) * 1.8 + 32);
-
+            check_property();
             weather = null;
             return;
         }
-
+        //Update image icon for weather
+        public void check_property() {
+            if (!last_weather.Equals(weatherType))
+            {
+                if (weatherType.ToLower().Contains("rain"))
+                {
+                    last_weather = weatherType;
+                    propertyupdate.Weatehr_Image = rain;
+                }
+                else if (weatherType.ToLower().Contains("sun"))
+                {
+                    last_weather = weatherType;
+                    propertyupdate.Weatehr_Image = sun;
+                }
+                else if (weatherType.ToLower().Contains("snow"))
+                {
+                    last_weather = weatherType;
+                    propertyupdate.Weatehr_Image = snow;
+                }
+                else if (weatherType.ToLower().Contains("thunder"))
+                {
+                    last_weather = weatherType;
+                    propertyupdate.Weatehr_Image = thunder;
+                }
+                else if (weatherType.ToLower().Contains("cloud"))
+                {
+                    last_weather = weatherType;
+                    propertyupdate.Weatehr_Image = cloud;
+                }
+                else
+                {
+                    if (!last_weather.Equals("null"))
+                    {
+                        last_weather = "null";
+                        App.basemodel.memory.SaveData("Weather Error: "+weatherType);
+                        propertyupdate.Weatehr_Image = null;
+                    }
+                }
+            }
+        }
     }
 }

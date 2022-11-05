@@ -103,7 +103,7 @@ namespace Emma.ViewModels.Commands
             {
                 if (_weather_image == null)
                     return new BitmapImage(new Uri("/Emma;component/images/icons/temp.png", UriKind.Relative));
-                return new BitmapImage(new Uri("/Emma;component/images/icons/rain.png", UriKind.Relative));
+                return _weather_image;
             }
             set
             {
