@@ -6,6 +6,7 @@ using VisioForge.Libs.NAudio.CoreAudioApi;
 using Emma.Model.Driver;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Threading.Tasks;
 
 namespace Emma.Model.Main
 {
@@ -23,7 +24,7 @@ namespace Emma.Model.Main
         }
 
         //Command actions
-        public bool Action(String command) {
+        public async Task<Boolean> Action(String command) {
             last_command = command;
             //Emergancy cancel
             if (command.Contains("cancel") || command.Contains("stop"))
@@ -36,18 +37,25 @@ namespace Emma.Model.Main
             {
                 Current.runtimedata.emma_running = false;
                 Current.memory.SaveData("ShutDown Computer");
+                Current.sound.voice("bye");
+                await Task.Delay(500);
                 Process.Start("shutdown", "/s /t 0");
                 System.Windows.Application.Current.Shutdown();
                 return true;
             }
+            //Restart computer
             else if (command.Contains("restart computer"))
             {
+                Current.sound.voice("bye");
+                await Task.Delay(500);
                 Process.Start("shutdown", "/r /t 0");
                 return true;
             }
             //shutdown emma
             else if (command.Contains("shutdown") || command.Contains("go away"))
             {
+                Current.sound.voice("bye");
+                await Task.Delay(500);
                 Current.runtimedata.emma_running = false;
                 System.Windows.Application.Current.Shutdown();
                 return true;

@@ -16,6 +16,7 @@ namespace Emma.Model
         public TextBox text_box { get; private set; }
         public settings Emmasettings { get; private set; }
         public Weather weather { get; private set; }
+        public Sound sound { get; private set; }
         #endregion
 
         //Constructor
@@ -31,6 +32,7 @@ namespace Emma.Model
             speech_text = new API_Call(runtimedata.directroy);
             text_box = new TextBox();
             weather = new Weather(speech_text,runtimedata.directroy);
+            sound = new Sound(runtimedata.directroy);
         }
 
     }

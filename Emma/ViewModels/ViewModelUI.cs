@@ -45,7 +45,8 @@ namespace Emma.ViewModels
         {
             App.basemodel.runtimedata.emma_running = false;
             App.basemodel.memory.SaveData("Program closed");
-            await Task.Delay(200);
+            App.basemodel.sound.voice("bye");
+            await Task.Delay(500);
             Application.Current.Shutdown();
         }
         public static void Min_App()

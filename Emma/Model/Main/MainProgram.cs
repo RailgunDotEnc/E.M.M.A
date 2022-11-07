@@ -14,8 +14,9 @@ namespace Emma.Model.Main
         private bool wifi_on = false;
         private bool emma_sleeping = false;
         private string? response =null;
-        private bool listening=false;
         private bool commanded_activated=false;
+        private bool listening = false;
+        private bool first_run=true;
         private MainCommands maincommands;
         private SleepMode sleepmode;
         #endregion
@@ -37,12 +38,14 @@ namespace Emma.Model.Main
             Thread mainthread = Thread.CurrentThread;
             mainthread.Name = "Main Thread";
             var window=Application.Current.MainWindow;
-
             while (true)
             {
                 //Set up variables
                 await Build_Variables();
-                await Task.Delay(2000);
+                //Say hello
+                if (first_run == true)
+                    Current.sound.voice("hello");
+                await Task.Delay(1000);
                 Current.memory.SaveData("Start");
                 //Emma doing routine
                 if (wifi_on == true && Current.runtimedata.emma_sleeping == false && App.basemodel.runtimedata.dragged == false && window.WindowState != WindowState.Minimized)
@@ -54,10 +57,14 @@ namespace Emma.Model.Main
                     Current.animation.setImage("error");
                     Current.text_box.set_speech("No wifi");
                 }
-                
-                //Result if app istold to sleep
+
+                //Result if app is told to sleep
                 if (Current.runtimedata.emma_sleeping == true)
-                    emma_sleeping=await Sleeping();
+                {
+                    Current.sound.voice("tired");
+                    await Task.Delay(300);
+                    emma_sleeping = await Sleeping();
+                }
 
                 await Task.Delay(2000);
 
@@ -96,6 +103,8 @@ namespace Emma.Model.Main
         //No sound error
         public async Task NoSoundError(string response)
         {
+            Current.sound.voice("mad");
+            await Task.Delay(300);
             Current.animation.setImage("mad");
             Current.runtimedata.attemps++;
             Current.text_box.set_speech(response);
@@ -110,6 +119,8 @@ namespace Emma.Model.Main
 
         //API Connection error
         public async Task APIConnectionError(string response) {
+            Current.sound.voice("error");
+            await Task.Delay(300);
             Current.animation.setImage("error");
             Current.runtimedata.attemps++;
             Current.text_box.set_speech(response);
@@ -133,13 +144,15 @@ namespace Emma.Model.Main
             Current.runtimedata.threads.Add(new Thread(() => Current.speech_text.Listen()));
             //Base image set
             Current.animation.setImage(null);
-            Current.text_box.set_speech("Hi");
             //Check if wifi is on
             wifi_on = Current.Wifi_Data.get_wifi_on();
         }
 
         //Clean variables
         public async Task Clean_Variables() {
+            first_run = false;
+            Current.sound.voice("joy");
+            await Task.Delay(300);
             Current.animation.setImage("laugh");
             Current.runtimedata.threads.RemoveAt(0);
             commanded_activated = false;
@@ -153,7 +166,7 @@ namespace Emma.Model.Main
         //Call and activate command
         public async Task<Boolean> Act(string response)
         {
-            commanded_activated = maincommands.Action(response);
+            commanded_activated = await maincommands.Action(response);
             while (true)
             {
                 if (maincommands.get_last_command() != null)
@@ -165,6 +178,8 @@ namespace Emma.Model.Main
             if (commanded_activated)
             {
                 //Conformation wheather called worked or not
+                Current.sound.voice("done");
+                await Task.Delay(300);
                 Current.animation.setImage("done");
                 return true;
             }
