@@ -267,15 +267,18 @@ namespace Emma.Model.Main
                 if (Current.runtimedata.emma_running != false)
                 {
                     Current.memory.SaveData("Check time");
+                    //Time and diagnostics update
                     Current.runtimedata.UpdateDiagnostics();
                     emma_sleeping = Current.runtimedata.emma_sleeping;
                     if (Current.runtimedata.emma_running == false)
                         break;
+                    //Weather update
                     try
                     {
                         await Current.weather.updateWeather();
                     }
                     catch(Newtonsoft.Json.JsonReaderException) { }
+                    Current.file_organizer.organize();
                 }
                 else break;
                 

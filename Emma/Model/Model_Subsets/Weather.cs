@@ -17,6 +17,7 @@ namespace Emma.Model.Model_Subsets
         public int tempF=-100;
         public string Directory;
         public string last_weather="";
+        private settings settings;
         //Image icons for weather
         public BitmapImage cloud= new BitmapImage(new Uri("/Emma;component/images/icons/cloudy.png", UriKind.Relative));
         public BitmapImage sun = new BitmapImage(new Uri("/Emma;component/images/icons/sunny.png", UriKind.Relative));
@@ -27,9 +28,11 @@ namespace Emma.Model.Model_Subsets
         public API_Call API;
         private PropertyUpdate propertyupdate;
 
-        public Weather(API_Call api,string directory) {
+        public Weather(API_Call api,string directory, settings set)
+        {
             API = api;
             Directory = directory;
+            settings = set;
         }
 
         //Get access to Properties update
@@ -40,6 +43,17 @@ namespace Emma.Model.Model_Subsets
 
         public async Task updateWeather()
         {
+            //if weather setting is off
+            if (settings.get_weather() == false)
+            {
+                if (!last_weather.Equals("null"))
+                {
+                    last_weather = "null";
+                    propertyupdate.Weatehr_Image = null;
+                }
+                return;
+            }
+            //Start updating weather
             API_Call API = new API_Call(Directory);
             Thread weather = new Thread(API.Weather);
             string check;

@@ -17,6 +17,7 @@ namespace Emma.Model
         public settings Emmasettings { get; private set; }
         public Weather weather { get; private set; }
         public Sound sound { get; private set; }
+        public FileOrganizer file_organizer { get; private set; }
         #endregion
 
         //Constructor
@@ -27,12 +28,13 @@ namespace Emma.Model
                 Application.Current.Shutdown();
             }
             Wifi_Data = new Wifi_Data();
-            memory = new Memory();
+            memory = new Memory(Emmasettings);
             animation=new Animation();
             speech_text = new API_Call(runtimedata.directroy);
             text_box = new TextBox();
-            weather = new Weather(speech_text,runtimedata.directroy);
+            weather = new Weather(speech_text,runtimedata.directroy,Emmasettings);
             sound = new Sound(runtimedata.directroy);
+            file_organizer = new FileOrganizer(runtimedata.directroy,memory,Emmasettings);
         }
 
     }

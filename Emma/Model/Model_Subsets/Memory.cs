@@ -9,10 +9,13 @@ namespace Emma.Model.Model_Subsets
         public string current_file;
         public string directory;
         public string date;
-        public string time;
+        private string time;
+        private settings settings;
         //constructor
-        public Memory() { 
+        public Memory(settings set)
+        {
             UpdateList();
+            settings = set;
         }
         //update stored list
         public void UpdateList()
@@ -86,6 +89,9 @@ namespace Emma.Model.Model_Subsets
         //Write to file
         public async void SaveData(string value)
         {
+            //save rundata setting is off
+            if (settings.get_saveRunData() == false)
+                return;
             while (true)
             {
                 try
