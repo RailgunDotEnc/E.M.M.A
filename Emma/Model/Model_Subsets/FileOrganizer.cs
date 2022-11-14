@@ -130,14 +130,14 @@ namespace Emma.Model.Model_Subsets
         }
 
         //Move file to correct folder
-        private void MoveFile(string dir, string file,string type) {
+        private void MoveFile(string dir, string file, string type) {
             string filename = "";
             if (type.Equals("")) {
                 memory.SaveData("No File extention: " + file);
                 return;
             }
             for (int i = file.Length - 1; i > 0; i--) {
-                if (file[i] == '/')
+                if (file[i] == '/' || file[i]=='\\')
                     break;
                 filename=file[i]+filename;
             }
@@ -150,7 +150,7 @@ namespace Emma.Model.Model_Subsets
             //If file is missing a folder to be placed in
             catch (System.IO.DirectoryNotFoundException)
             {
-                MakeFolder(dir,type);
+                MakeFolder(dir,"");
                 File.Move(from, to);
             }
             catch (System.IO.IOException e)
