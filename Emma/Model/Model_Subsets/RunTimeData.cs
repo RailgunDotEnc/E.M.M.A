@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Management;
 using System.Threading;
 using System.Windows;
@@ -19,7 +20,8 @@ namespace Emma.Model.Model_Subsets
         public string time = "0:00 AM";
         public string date = "00/00/00";
         public int attemps = 0;
-        public String? directroy = System.AppContext.BaseDirectory.Replace("\\Emma\\bin\\Debug\\net6.0-windows", string.Empty);
+        public String? directroy;
+        public string userDirectroy;
         private BitmapImage? listening = null;
         public bool menu_up = false;
         public bool dragged = false;
@@ -32,6 +34,12 @@ namespace Emma.Model.Model_Subsets
         //Constructor
         public RunTimeData()
         {
+            string path = Directory.GetCurrentDirectory();
+            path=path.Replace("\\", "/");
+            if (path.Contains("Debug"))
+                directroy = path.Replace("/Emma/bin/Debug/net6.0-windows", string.Empty);
+            else
+                directroy= path.Replace("/Emma/bin/Release/net6.0-windows", string.Empty);
             //Set up time
             date = DateTime.Now.ToString("M/d/yyyy");
             time = DateTime.Now.ToString("hh:mm tt");

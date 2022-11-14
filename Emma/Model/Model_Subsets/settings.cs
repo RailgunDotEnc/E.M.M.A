@@ -16,7 +16,7 @@ namespace Emma.Model.Model_Subsets
         }
         //Read from file
         public void read_settings() {  
-            using (StreamReader file = new StreamReader(direct+ "\\Emma\\Data\\EmmasSettings.txt"))
+            using (StreamReader file = new StreamReader(direct+ "/Emma/Data/EmmasSettings.txt"))
             {
                 int counter = 0;
                 string ln;
@@ -34,7 +34,7 @@ namespace Emma.Model.Model_Subsets
         }
         //write settings to file
         public void write_settings() {
-            using (StreamWriter writer = new StreamWriter(direct + "\\Data\\EmmasSettings.txt"))
+            using (StreamWriter writer = new StreamWriter(direct + "/Data/EmmasSettings.txt"))
             {
                 for (int counter = 0; counter < settings_list.Length; counter++) {
                     writer.WriteLine(settings_list[counter]);
@@ -98,7 +98,7 @@ namespace Emma.Model.Model_Subsets
             for (int i = 0; i < list.Length; i++) {
                 settings_list[i] = list[i];
             }
-            StreamWriter sw = new StreamWriter(direct + "\\Emma\\Data\\EmmasSettings.txt");
+            StreamWriter sw = new StreamWriter(direct + "/Emma/Data/EmmasSettings.txt");
             for (int i = 0; i < list.Length-2; i++)
             {
                 sw.WriteLine(list[i]);

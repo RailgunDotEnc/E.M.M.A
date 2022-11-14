@@ -170,7 +170,7 @@ namespace Emma.Model.Main
                 string time = App.basemodel.runtimedata.time;
                 Random random = new Random();
                 //Save to screen shots folder
-                bmpScreenshot.Save(directory + "\\Emma\\Data\\ScreenShots\\Screenshot1"+date+"_"+time+"_"+random.Next(0,10000)+".png", ImageFormat.Png);
+                bmpScreenshot.Save(directory + "/Emma/Data/ScreenShots/Screenshot1"+date+"_"+time+"_"+random.Next(0,10000)+".png", ImageFormat.Png);
                 return true;
             }
             //No commands were achived

@@ -28,13 +28,13 @@ namespace Emma.Model
                 Application.Current.Shutdown();
             }
             Wifi_Data = new Wifi_Data();
-            memory = new Memory(Emmasettings);
+            memory = new Memory(Emmasettings,runtimedata.directroy);
             animation=new Animation();
             speech_text = new API_Call(runtimedata.directroy);
             text_box = new TextBox();
             weather = new Weather(speech_text,runtimedata.directroy,Emmasettings);
             sound = new Sound(runtimedata.directroy);
-            file_organizer = new FileOrganizer(runtimedata.directroy,memory,Emmasettings);
+            file_organizer = new FileOrganizer(memory,Emmasettings);
         }
 
     }

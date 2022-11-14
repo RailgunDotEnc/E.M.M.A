@@ -1,0 +1,467 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+	<UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>images\icons\emma_icon2.ico</ApplicationIcon>
+    <BaseOutputPath></BaseOutputPath>
+    <PackageIcon>emma_icon.png</PackageIcon>
+    <IncludeSymbols>False</IncludeSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>False</Optimize>
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="images\frame.png" />
+    <None Remove="images\icons\check.png" />
+    <None Remove="images\icons\close_frame.png" />
+    <None Remove="images\icons\close_window.png" />
+    <None Remove="images\icons\close_window_d.png" />
+    <None Remove="images\icons\cloudy.png" />
+    <None Remove="images\icons\folder.png" />
+    <None Remove="images\icons\foldzer_d.png" />
+    <None Remove="images\icons\high_wifi.png" />
+    <None Remove="images\icons\lock.png" />
+    <None Remove="images\icons\low_wifi.png" />
+    <None Remove="images\icons\medium_wifi.png" />
+    <None Remove="images\icons\memory.png" />
+    <None Remove="images\icons\memory_d.png" />
+    <None Remove="images\icons\mimimize2.png" />
+    <None Remove="images\icons\minimize.png" />
+    <None Remove="images\icons\minimize_d.png" />
+    <None Remove="images\icons\Music.png" />
+    <None Remove="images\icons\no_wifi.png" />
+    <None Remove="images\icons\off.png" />
+    <None Remove="images\icons\open_frame.png" />
+    <None Remove="images\icons\PixalEmma.png" />
+    <None Remove="images\icons\PixalEmmaBackup.png" />
+    <None Remove="images\icons\rain.png" />
+    <None Remove="images\icons\settings.png" />
+    <None Remove="images\icons\settings_d.png" />
+    <None Remove="images\icons\snow.png" />
+    <None Remove="images\icons\sunny.png" />
+    <None Remove="images\icons\temp.png" />
+    <None Remove="images\icons\thunderstrom.png" />
+    <None Remove="images\icons\wifi.png" />
+    <None Remove="images\mini_frame.png" />
+    <None Remove="images\new_base.png" />
+    <None Remove="images\new_done.png" />
+    <None Remove="images\new_error.png" />
+    <None Remove="images\new_laugh.png" />
+    <None Remove="images\new_listening.png" />
+    <None Remove="images\new_mad.png" />
+    <None Remove="images\new_sad.png" />
+    <None Remove="images\new_searching.png" />
+    <None Remove="images\new_sleeping.png" />
+    <None Remove="images\settings_menu.png" />
+    <None Remove="images\Text_box.png" />
+    <None Remove="Voice\camera.wav" />
+    <None Remove="Voice\comfortable_cuddling_sighs.wav" />
+    <None Remove="Voice\FCS12_001_Start1.wav" />
+    <None Remove="Voice\FCS12_002_Start2.wav" />
+    <None Remove="Voice\FCS12_003_Victory1.wav" />
+    <None Remove="Voice\FCS12_004_Victory2.wav" />
+    <None Remove="Voice\FCS12_005_Follow1.wav" />
+    <None Remove="Voice\FCS12_006_Follow2.wav" />
+    <None Remove="Voice\FCS12_007_Choice1.wav" />
+    <None Remove="Voice\FCS12_008_Choice2.wav" />
+    <None Remove="Voice\FCS12_009_Runaway1.wav" />
+    <None Remove="Voice\FCS12_010_Runaway2.wav" />
+    <None Remove="Voice\FCS12_011_Tool use1.wav" />
+    <None Remove="Voice\FCS12_012_Tool use2.wav" />
+    <None Remove="Voice\FCS12_013_Healthy turn1.wav" />
+    <None Remove="Voice\FCS12_014_Healthy turn2.wav" />
+    <None Remove="Voice\FCS12_015_Dying turn1.wav" />
+    <None Remove="Voice\FCS12_016_Dying turn2.wav" />
+    <None Remove="Voice\FCS12_017_Abnormal state turn1.wav" />
+    <None Remove="Voice\FCS12_018_Abnormal state turn2.wav" />
+    <None Remove="Voice\FCS12_019_Unable to fight1.wav" />
+    <None Remove="Voice\FCS12_020_Unable to fight2.wav" />
+    <None Remove="Voice\FCS12_021_Damage1.wav" />
+    <None Remove="Voice\FCS12_022_Damage2.wav" />
+    <None Remove="Voice\FCS12_023_Damage3.wav" />
+    <None Remove="Voice\FCS12_024_Damage4.wav" />
+    <None Remove="Voice\FCS12_025_Damage5.wav" />
+    <None Remove="Voice\FCS12_026_Large damage1.wav" />
+    <None Remove="Voice\FCS12_027_Large damage2.wav" />
+    <None Remove="Voice\FCS12_028_Large damage3.wav" />
+    <None Remove="Voice\FCS12_029_Large damage4.wav" />
+    <None Remove="Voice\FCS12_030_Large damage5.wav" />
+    <None Remove="Voice\FCS12_031_No damage1.wav" />
+    <None Remove="Voice\FCS12_032_No damage2.wav" />
+    <None Remove="Voice\FCS12_033_Weak attack1.wav" />
+    <None Remove="Voice\FCS12_034_Weak attack2.wav" />
+    <None Remove="Voice\FCS12_035_Weak attack3.wav" />
+    <None Remove="Voice\FCS12_036_Weak attack4.wav" />
+    <None Remove="Voice\FCS12_037_Weak attack5.wav" />
+    <None Remove="Voice\FCS12_038_Medium attack1.wav" />
+    <None Remove="Voice\FCS12_039_Medium attack2.wav" />
+    <None Remove="Voice\FCS12_040_Medium attack3.wav" />
+    <None Remove="Voice\FCS12_041_Medium attack4.wav" />
+    <None Remove="Voice\FCS12_042_Medium attack5.wav" />
+    <None Remove="Voice\FCS12_043_Strong attack1.wav" />
+    <None Remove="Voice\FCS12_044_Strong attack2.wav" />
+    <None Remove="Voice\FCS12_045_Strong attack3.wav" />
+    <None Remove="Voice\FCS12_046_Strong attack4.wav" />
+    <None Remove="Voice\FCS12_047_Strong attack5.wav" />
+    <None Remove="Voice\FCS12_048_Recover1.wav" />
+    <None Remove="Voice\FCS12_049_Recover2.wav" />
+    <None Remove="Voice\FCS12_050_Recover3.wav" />
+    <None Remove="Voice\FCS12_051_Ok1.wav" />
+    <None Remove="Voice\FCS12_052_Ok2.wav" />
+    <None Remove="Voice\FCS12_053_Ok3.wav" />
+    <None Remove="Voice\FCS12_054_Deny1.wav" />
+    <None Remove="Voice\FCS12_055_Deny2.wav" />
+    <None Remove="Voice\FCS12_056_Deny3.wav" />
+    <None Remove="Voice\FCS12_057_Aha1.wav" />
+    <None Remove="Voice\FCS12_058_Aha2.wav" />
+    <None Remove="Voice\FCS12_059_Aha3.wav" />
+    <None Remove="Voice\FCS12_060_Reply1.wav" />
+    <None Remove="Voice\FCS12_061_Reply2.wav" />
+    <None Remove="Voice\FCS12_062_Reply3.wav" />
+    <None Remove="Voice\FCS12_063_Discover1.wav" />
+    <None Remove="Voice\FCS12_064_Discover2.wav" />
+    <None Remove="Voice\FCS12_065_Discover3.wav" />
+    <None Remove="Voice\FCS12_066_Thinking1.wav" />
+    <None Remove="Voice\FCS12_067_Thinking2.wav" />
+    <None Remove="Voice\FCS12_068_Thinking3.wav" />
+    <None Remove="Voice\FCS12_069_Thinking4.wav" />
+    <None Remove="Voice\FCS12_070_Suspicious1.wav" />
+    <None Remove="Voice\FCS12_071_Suspicious2.wav" />
+    <None Remove="Voice\FCS12_072_Joy1.wav" />
+    <None Remove="Voice\FCS12_073_Joy2.wav" />
+    <None Remove="Voice\FCS12_074_Joy3.wav" />
+    <None Remove="Voice\FCS12_075_Anger1.wav" />
+    <None Remove="Voice\FCS12_076_Anger2.wav" />
+    <None Remove="Voice\FCS12_077_Feel down1.wav" />
+    <None Remove="Voice\FCS12_078_Feel down2.wav" />
+    <None Remove="Voice\FCS12_079_Shyness1.wav" />
+    <None Remove="Voice\FCS12_080_Shyness2.wav" />
+    <None Remove="Voice\FCS12_081_Satisfaction1.wav" />
+    <None Remove="Voice\FCS12_082_Satisfaction2.wav" />
+    <None Remove="Voice\FCS12_082_Satisfaction2_edit.wav" />
+    <None Remove="Voice\FCS12_083_Shy1.wav" />
+    <None Remove="Voice\FCS12_084_Shy2.wav" />
+    <None Remove="Voice\FCS12_085_Surprise1.wav" />
+    <None Remove="Voice\FCS12_086_Surprise2.wav" />
+    <None Remove="Voice\FCS12_087_Laugh1.wav" />
+    <None Remove="Voice\FCS12_088_Laugh2.wav" />
+    <None Remove="Voice\FCS12_089_Bitter smile1.wav" />
+    <None Remove="Voice\FCS12_090_Bitter smile2.wav" />
+    <None Remove="Voice\FCS12_091_Grin1.wav" />
+    <None Remove="Voice\FCS12_092_Grin2.wav" />
+    <None Remove="Voice\FCS12_093_Weep1.wav" />
+    <None Remove="Voice\FCS12_094_Weep2.wav" />
+    <None Remove="Voice\FCS12_095_Thank you1.wav" />
+    <None Remove="Voice\FCS12_096_Thank you2.wav" />
+    <None Remove="Voice\FCS12_097_Praise1.wav" />
+    <None Remove="Voice\FCS12_098_Praise2.wav" />
+    <None Remove="Voice\FCS12_099_Apologize1.wav" />
+    <None Remove="Voice\FCS12_100_Apologize2.wav" />
+    <None Remove="Voice\FCS12_101_Amazed1.wav" />
+    <None Remove="Voice\FCS12_102_Amazed2.wav" />
+    <None Remove="Voice\FCS12_103_Abuse1.wav" />
+    <None Remove="Voice\FCS12_104_Abuse2.wav" />
+    <None Remove="Voice\FCS12_105_Request1.wav" />
+    <None Remove="Voice\FCS12_106_Request2.wav" />
+    <None Remove="Voice\FCS12_107_Hello1.wav" />
+    <None Remove="Voice\FCS12_108_Hello2.wav" />
+    <None Remove="Voice\FCS12_109_Call1.wav" />
+    <None Remove="Voice\FCS12_110_Call2.wav" />
+    <None Remove="Voice\FCS12_111_Call strongly1.wav" />
+    <None Remove="Voice\FCS12_112_Call strongly2.wav" />
+    <None Remove="Voice\FCS12_113_Watch out1.wav" />
+    <None Remove="Voice\FCS12_114_Watch out2.wav" />
+    <None Remove="Voice\FCS12_115_Hold1.wav" />
+    <None Remove="Voice\FCS12_116_Hold2.wav" />
+    <None Remove="Voice\FCS12_117_Hand over1.wav" />
+    <None Remove="Voice\FCS12_118_Hand over2.wav" />
+    <None Remove="Voice\FCS12_119_Get shocked1.wav" />
+    <None Remove="Voice\FCS12_120_Get shocked2.wav" />
+    <None Remove="Voice\FCS12_121_Good bye1.wav" />
+    <None Remove="Voice\FCS12_122_Good bye2.wav" />
+    <None Remove="Voice\FCS12_123_growth_Enhanced1.wav" />
+    <None Remove="Voice\FCS12_124_growth_Enhanced2.wav" />
+    <None Remove="Voice\FCS12_125_growth_Level up1.wav" />
+    <None Remove="Voice\FCS12_126_growth_Level up2.wav" />
+    <None Remove="Voice\FCS12_List.pdf" />
+    <None Remove="Voice\FCS12_Readme.pdf" />
+    <None Remove="Voice\giggles1.wav" />
+    <None Remove="Voice\giggles2.wav" />
+    <None Remove="Voice\good.wav" />
+    <None Remove="Voice\go_in.wav" />
+    <None Remove="Voice\go_to_hell.wav" />
+    <None Remove="Voice\happy_squeals.wav" />
+    <None Remove="Voice\heeh.wav" />
+    <None Remove="Voice\it_hurts.wav" />
+    <None Remove="Voice\kiss.wav" />
+    <None Remove="Voice\laugh1.wav" />
+    <None Remove="Voice\laugh2.wav" />
+    <None Remove="Voice\pages.wav" />
+    <None Remove="Voice\pleasure_sign.wav" />
+    <None Remove="Voice\question.wav" />
+    <None Remove="Voice\sound1.wav" />
+    <None Remove="Voice\sound2.wav" />
+    <None Remove="Voice\sound3.wav" />
+    <None Remove="Voice\sound4.wav" />
+    <None Remove="Voice\sound5.wav" />
+    <None Remove="Voice\surprise.wav" />
+    <None Remove="Voice\surprise_question_moan.wav" />
+    <None Remove="Voice\unh.wav" />
+    <None Remove="Voice\we_did_it.wav" />
+    <None Remove="Voice\yeah.wav" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="images\icons\emma_icon2.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\frame.png" />
+    <Resource Include="images\icons\check.png" />
+    <Resource Include="images\icons\close_frame.png" />
+    <Resource Include="images\icons\close_window.png" />
+    <Resource Include="images\icons\close_window_d.png" />
+    <Resource Include="images\icons\cloudy.png" />
+    <Resource Include="images\icons\folder.png" />
+    <Resource Include="images\icons\folder_d.png" />
+    <Resource Include="images\icons\high_wifi.png" />
+    <Resource Include="images\icons\lock.png" />
+    <Resource Include="images\icons\low_wifi.png" />
+    <Resource Include="images\icons\medium_wifi.png" />
+    <Resource Include="images\icons\memory.png" />
+    <Resource Include="images\icons\memory_d.png" />
+    <Resource Include="images\icons\mimimize2.png" />
+    <Resource Include="images\icons\minimize.png" />
+    <Resource Include="images\icons\minimize_d.png" />
+    <Resource Include="images\icons\Music.png" />
+    <Resource Include="images\icons\no_wifi.png" />
+    <Resource Include="images\icons\off.png" />
+    <Resource Include="images\icons\open_frame.png" />
+    <Resource Include="images\icons\PixalEmma.png" />
+    <Resource Include="images\icons\PixalEmmaBackup.png" />
+    <Resource Include="images\icons\rain.png" />
+    <Resource Include="images\icons\settings.png" />
+    <Resource Include="images\icons\settings_d.png" />
+    <Resource Include="images\icons\snow.png" />
+    <Resource Include="images\icons\sunny.png" />
+    <Resource Include="images\icons\temp.png" />
+    <Resource Include="images\icons\thunderstrom.png" />
+    <Resource Include="images\icons\wifi.png" />
+    <Resource Include="images\mini_frame.png" />
+    <Resource Include="images\new_base.png" />
+    <Resource Include="images\new_done.png" />
+    <Resource Include="images\new_error.png" />
+    <Resource Include="images\new_laugh.png" />
+    <Resource Include="images\new_listening.png" />
+    <Resource Include="images\new_mad.png" />
+    <Resource Include="images\new_sad.png" />
+    <Resource Include="images\new_searching.png" />
+    <Resource Include="images\new_sleeping.png" />
+    <Resource Include="images\settings_menu.png" />
+    <Resource Include="images\Text_box.png" />
+    <Resource Include="Voice\camera.wav" />
+    <Resource Include="Voice\comfortable_cuddling_sighs.wav" />
+    <Resource Include="Voice\FCS12_001_Start1.wav" />
+    <Resource Include="Voice\FCS12_002_Start2.wav" />
+    <Resource Include="Voice\FCS12_003_Victory1.wav" />
+    <Resource Include="Voice\FCS12_004_Victory2.wav" />
+    <Resource Include="Voice\FCS12_005_Follow1.wav" />
+    <Resource Include="Voice\FCS12_006_Follow2.wav" />
+    <Resource Include="Voice\FCS12_007_Choice1.wav" />
+    <Resource Include="Voice\FCS12_008_Choice2.wav" />
+    <Resource Include="Voice\FCS12_009_Runaway1.wav" />
+    <Resource Include="Voice\FCS12_010_Runaway2.wav" />
+    <Resource Include="Voice\FCS12_011_Tool use1.wav" />
+    <Resource Include="Voice\FCS12_012_Tool use2.wav" />
+    <Resource Include="Voice\FCS12_013_Healthy turn1.wav" />
+    <Resource Include="Voice\FCS12_014_Healthy turn2.wav" />
+    <Resource Include="Voice\FCS12_015_Dying turn1.wav" />
+    <Resource Include="Voice\FCS12_016_Dying turn2.wav" />
+    <Resource Include="Voice\FCS12_017_Abnormal state turn1.wav" />
+    <Resource Include="Voice\FCS12_018_Abnormal state turn2.wav" />
+    <Resource Include="Voice\FCS12_019_Unable to fight1.wav" />
+    <Resource Include="Voice\FCS12_020_Unable to fight2.wav" />
+    <Resource Include="Voice\FCS12_021_Damage1.wav" />
+    <Resource Include="Voice\FCS12_022_Damage2.wav" />
+    <Resource Include="Voice\FCS12_023_Damage3.wav" />
+    <Resource Include="Voice\FCS12_024_Damage4.wav" />
+    <Resource Include="Voice\FCS12_025_Damage5.wav" />
+    <Resource Include="Voice\FCS12_026_Large damage1.wav" />
+    <Resource Include="Voice\FCS12_027_Large damage2.wav" />
+    <Resource Include="Voice\FCS12_028_Large damage3.wav" />
+    <Resource Include="Voice\FCS12_029_Large damage4.wav" />
+    <Resource Include="Voice\FCS12_030_Large damage5.wav" />
+    <Resource Include="Voice\FCS12_031_No damage1.wav" />
+    <Resource Include="Voice\FCS12_032_No damage2.wav" />
+    <Resource Include="Voice\FCS12_033_Weak attack1.wav" />
+    <Resource Include="Voice\FCS12_034_Weak attack2.wav" />
+    <Resource Include="Voice\FCS12_035_Weak attack3.wav" />
+    <Resource Include="Voice\FCS12_036_Weak attack4.wav" />
+    <Resource Include="Voice\FCS12_037_Weak attack5.wav" />
+    <Resource Include="Voice\FCS12_038_Medium attack1.wav" />
+    <Resource Include="Voice\FCS12_039_Medium attack2.wav" />
+    <Resource Include="Voice\FCS12_040_Medium attack3.wav" />
+    <Resource Include="Voice\FCS12_041_Medium attack4.wav" />
+    <Resource Include="Voice\FCS12_042_Medium attack5.wav" />
+    <Resource Include="Voice\FCS12_043_Strong attack1.wav" />
+    <Resource Include="Voice\FCS12_044_Strong attack2.wav" />
+    <Resource Include="Voice\FCS12_045_Strong attack3.wav" />
+    <Resource Include="Voice\FCS12_046_Strong attack4.wav" />
+    <Resource Include="Voice\FCS12_047_Strong attack5.wav" />
+    <Resource Include="Voice\FCS12_048_Recover1.wav" />
+    <Resource Include="Voice\FCS12_049_Recover2.wav" />
+    <Resource Include="Voice\FCS12_050_Recover3.wav" />
+    <Resource Include="Voice\FCS12_051_Ok1.wav" />
+    <Resource Include="Voice\FCS12_052_Ok2.wav" />
+    <Resource Include="Voice\FCS12_053_Ok3.wav" />
+    <Resource Include="Voice\FCS12_054_Deny1.wav" />
+    <Resource Include="Voice\FCS12_055_Deny2.wav" />
+    <Resource Include="Voice\FCS12_056_Deny3.wav" />
+    <Resource Include="Voice\FCS12_057_Aha1.wav" />
+    <Resource Include="Voice\FCS12_058_Aha2.wav" />
+    <Resource Include="Voice\FCS12_059_Aha3.wav" />
+    <Resource Include="Voice\FCS12_060_Reply1.wav" />
+    <Resource Include="Voice\FCS12_061_Reply2.wav" />
+    <Resource Include="Voice\FCS12_062_Reply3.wav" />
+    <Resource Include="Voice\FCS12_063_Discover1.wav" />
+    <Resource Include="Voice\FCS12_064_Discover2.wav" />
+    <Resource Include="Voice\FCS12_065_Discover3.wav" />
+    <Resource Include="Voice\FCS12_066_Thinking1.wav" />
+    <Resource Include="Voice\FCS12_067_Thinking2.wav" />
+    <Resource Include="Voice\FCS12_068_Thinking3.wav" />
+    <Resource Include="Voice\FCS12_069_Thinking4.wav" />
+    <Resource Include="Voice\FCS12_070_Suspicious1.wav" />
+    <Resource Include="Voice\FCS12_071_Suspicious2.wav" />
+    <Resource Include="Voice\FCS12_072_Joy1.wav" />
+    <Resource Include="Voice\FCS12_073_Joy2.wav" />
+    <Resource Include="Voice\FCS12_074_Joy3.wav" />
+    <Resource Include="Voice\FCS12_075_Anger1.wav" />
+    <Resource Include="Voice\FCS12_076_Anger2.wav" />
+    <Resource Include="Voice\FCS12_077_Feel down1.wav" />
+    <Resource Include="Voice\FCS12_078_Feel down2.wav" />
+    <Resource Include="Voice\FCS12_079_Shyness1.wav" />
+    <Resource Include="Voice\FCS12_080_Shyness2.wav" />
+    <Resource Include="Voice\FCS12_081_Satisfaction1.wav" />
+    <Resource Include="Voice\FCS12_082_Satisfaction2.wav" />
+    <Resource Include="Voice\FCS12_082_Satisfaction2_edit.wav" />
+    <Resource Include="Voice\FCS12_083_Shy1.wav" />
+    <Resource Include="Voice\FCS12_084_Shy2.wav" />
+    <Resource Include="Voice\FCS12_085_Surprise1.wav" />
+    <Resource Include="Voice\FCS12_086_Surprise2.wav" />
+    <Resource Include="Voice\FCS12_087_Laugh1.wav" />
+    <Resource Include="Voice\FCS12_088_Laugh2.wav" />
+    <Resource Include="Voice\FCS12_089_Bitter smile1.wav" />
+    <Resource Include="Voice\FCS12_090_Bitter smile2.wav" />
+    <Resource Include="Voice\FCS12_091_Grin1.wav" />
+    <Resource Include="Voice\FCS12_092_Grin2.wav" />
+    <Resource Include="Voice\FCS12_093_Weep1.wav" />
+    <Resource Include="Voice\FCS12_094_Weep2.wav" />
+    <Resource Include="Voice\FCS12_095_Thank you1.wav" />
+    <Resource Include="Voice\FCS12_096_Thank you2.wav" />
+    <Resource Include="Voice\FCS12_097_Praise1.wav" />
+    <Resource Include="Voice\FCS12_098_Praise2.wav" />
+    <Resource Include="Voice\FCS12_099_Apologize1.wav" />
+    <Resource Include="Voice\FCS12_100_Apologize2.wav" />
+    <Resource Include="Voice\FCS12_101_Amazed1.wav" />
+    <Resource Include="Voice\FCS12_102_Amazed2.wav" />
+    <Resource Include="Voice\FCS12_103_Abuse1.wav" />
+    <Resource Include="Voice\FCS12_104_Abuse2.wav" />
+    <Resource Include="Voice\FCS12_105_Request1.wav" />
+    <Resource Include="Voice\FCS12_106_Request2.wav" />
+    <Resource Include="Voice\FCS12_107_Hello1.wav" />
+    <Resource Include="Voice\FCS12_108_Hello2.wav" />
+    <Resource Include="Voice\FCS12_109_Call1.wav" />
+    <Resource Include="Voice\FCS12_110_Call2.wav" />
+    <Resource Include="Voice\FCS12_111_Call strongly1.wav" />
+    <Resource Include="Voice\FCS12_112_Call strongly2.wav" />
+    <Resource Include="Voice\FCS12_113_Watch out1.wav" />
+    <Resource Include="Voice\FCS12_114_Watch out2.wav" />
+    <Resource Include="Voice\FCS12_115_Hold1.wav" />
+    <Resource Include="Voice\FCS12_116_Hold2.wav" />
+    <Resource Include="Voice\FCS12_117_Hand over1.wav" />
+    <Resource Include="Voice\FCS12_118_Hand over2.wav" />
+    <Resource Include="Voice\FCS12_119_Get shocked1.wav" />
+    <Resource Include="Voice\FCS12_120_Get shocked2.wav" />
+    <Resource Include="Voice\FCS12_121_Good bye1.wav" />
+    <Resource Include="Voice\FCS12_122_Good bye2.wav" />
+    <Resource Include="Voice\FCS12_123_growth_Enhanced1.wav" />
+    <Resource Include="Voice\FCS12_124_growth_Enhanced2.wav" />
+    <Resource Include="Voice\FCS12_125_growth_Level up1.wav" />
+    <Resource Include="Voice\FCS12_126_growth_Level up2.wav" />
+    <Resource Include="Voice\FCS12_List.pdf" />
+    <Resource Include="Voice\FCS12_Readme.pdf" />
+    <Resource Include="Voice\giggles1.wav" />
+    <Resource Include="Voice\giggles2.wav" />
+    <Resource Include="Voice\good.wav" />
+    <Resource Include="Voice\go_in.wav" />
+    <Resource Include="Voice\go_to_hell.wav" />
+    <Resource Include="Voice\happy_squeals.wav" />
+    <Resource Include="Voice\heeh.wav" />
+    <Resource Include="Voice\it_hurts.wav" />
+    <Resource Include="Voice\kiss.wav" />
+    <Resource Include="Voice\laugh1.wav" />
+    <Resource Include="Voice\laugh2.wav" />
+    <Resource Include="Voice\pages.wav" />
+    <Resource Include="Voice\pleasure_sign.wav" />
+    <Resource Include="Voice\question.wav" />
+    <Resource Include="Voice\sound1.wav" />
+    <Resource Include="Voice\sound2.wav" />
+    <Resource Include="Voice\sound3.wav" />
+    <Resource Include="Voice\sound4.wav" />
+    <Resource Include="Voice\sound5.wav" />
+    <Resource Include="Voice\surprise.wav" />
+    <Resource Include="Voice\surprise_question_moan.wav" />
+    <Resource Include="Voice\unh.wav" />
+    <Resource Include="Voice\we_did_it.wav" />
+    <Resource Include="Voice\yeah.wav" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\ScreenShots\" />
+    <Folder Include="Data\Stored_Memory\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="System.Collections" Version="4.3.0" />
+    <PackageReference Include="System.Collections.NonGeneric" Version="4.3.0" />
+    <PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />
+    <PackageReference Include="System.Management" Version="7.0.0-rc.1.22426.10" />
+    <PackageReference Include="VisioForge.DotNet.Core.TRIAL" Version="15.1.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="images\icons\emma_icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

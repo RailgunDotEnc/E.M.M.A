@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
+using System.IO;
+using System.Windows.Forms;
 using System.Windows.Media;
 
 namespace Emma.Model.Model_Subsets
@@ -14,10 +17,10 @@ namespace Emma.Model.Model_Subsets
         private MediaPlayer done;
         private MediaPlayer bye;
 
-        private string Directory;
+        private string directory;
 
         public Sound(string value) { 
-            Directory = value;
+            directory = value;
         }
         private void Play(MediaPlayer speech)
         {
@@ -36,7 +39,7 @@ namespace Emma.Model.Model_Subsets
             if (value.Equals("tired"))
             {
                 sleep = new MediaPlayer();
-                sleep.Open(new Uri(Directory + "\\Emma\\Voice\\FCS12_013_Healthy turn1.wav"));
+                sleep.Open(new Uri(directory + "/Emma/Voice/FCS12_013_Healthy turn1.wav"));
                 Play(sleep);
                 speech="I don't wanna work~";
             }
@@ -44,7 +47,8 @@ namespace Emma.Model.Model_Subsets
             {
                 //Opening sound
                 hello = new MediaPlayer();
-                hello.Open(new Uri(Directory + "\\Emma\\Voice\\FCS12_111_Call strongly1.wav"));
+                string test=Environment.GetEnvironmentVariable("userdir");
+                hello.Open(new Uri(directory + "/Emma/Voice/FCS12_111_Call strongly1.wav"));
                 Play(hello);
                 speech= "Hello-?";
             }
@@ -52,14 +56,14 @@ namespace Emma.Model.Model_Subsets
             {
                 //joy
                 joy = new MediaPlayer();
-                joy.Open(new Uri(Directory + "\\Emma\\Voice\\FCS12_101_Amazed1.wav"));
+                joy.Open(new Uri(directory + "/Emma/Voice/FCS12_101_Amazed1.wav"));
                 Play(joy);
                 speech= "Wow...";
             }
             else if (value.Equals("what")) {
                 //Listtening que
                 question = new MediaPlayer();
-                question.Open(new Uri(Directory + "\\Emma\\Voice\\FCS12_060_Reply1.wav"));
+                question.Open(new Uri(directory + "/Emma/Voice/FCS12_060_Reply1.wav"));
                 Play(question);
                 speech = "Wha~t?";
             }
@@ -67,7 +71,7 @@ namespace Emma.Model.Model_Subsets
             {
                 //error
                 error = new MediaPlayer();
-                error.Open(new Uri(Directory + "\\Emma\\Voice\\FCS12_023_Damage3.wav"));
+                error.Open(new Uri(directory + "/Emma/Voice/FCS12_023_Damage3.wav"));
                 Play(error);
                 speech = "Ueh";
             }
@@ -75,7 +79,7 @@ namespace Emma.Model.Model_Subsets
             {
                 //mad
                 mad = new MediaPlayer();
-                mad.Open(new Uri(Directory + "\\Emma\\Voice\\FCS12_071_Suspicious2.wav"));
+                mad.Open(new Uri(directory + "/Emma/Voice/FCS12_071_Suspicious2.wav"));
                 Play(mad);
                 speech = "*staaare*";
             }
@@ -83,7 +87,7 @@ namespace Emma.Model.Model_Subsets
             {
                 //done
                 done = new MediaPlayer();
-                done.Open(new Uri(Directory + "\\Emma\\Voice\\FCS12_073_Joy2.wav"));
+                done.Open(new Uri(directory + "/Emma/Voice/FCS12_073_Joy2.wav"));
                 Play(done);
                 speech = "All right!";
             }
@@ -91,7 +95,7 @@ namespace Emma.Model.Model_Subsets
             {
                 //bye
                 bye = new MediaPlayer();
-                bye.Open(new Uri(Directory + "\\Emma\\Voice\\FCS12_122_Good bye2.wav"));
+                bye.Open(new Uri(directory + "/Emma/Voice/FCS12_122_Good bye2.wav"));
                 Play(bye);
                 speech = "Bye bye~";
             }

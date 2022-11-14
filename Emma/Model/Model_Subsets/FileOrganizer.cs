@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -9,11 +7,11 @@ namespace Emma.Model.Model_Subsets
 {
     public class FileOrganizer
     {
-        private string CurDirectory;
         private string DownloadOrigin;
-        private string userfile;
+        private string userDirectory=Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+        private string PictureDirectory=Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+        private string desktopDirectory=Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
         private string DownloadNew;
-        private string imageloc;
         private string[] downloadfiles;
         private string[] folder_in;
         private Memory memory;
@@ -23,9 +21,8 @@ namespace Emma.Model.Model_Subsets
 
 
         //Constructor
-        public FileOrganizer(string directory, Memory mem, settings set)
+        public FileOrganizer(Memory mem, settings set)
         {
-            CurDirectory = directory;
             memory = mem;
             settings = set;
             updateDirectries();
@@ -44,10 +41,10 @@ namespace Emma.Model.Model_Subsets
             for (int i = 0;i<folder_in.Length;i++) {
                 cur = folder_in[i];
                 type = filetype(cur);
-                loc = DownloadNew+"\\"+type;
+                loc = DownloadNew+"/"+type;
                 //Move to picture folder
                 if(isImg(type))
-                    loc = imageloc+"\\"+type;
+                    loc = PictureDirectory + "/"+type;
                 MoveFile(loc, cur,type);
             }
 
@@ -55,7 +52,7 @@ namespace Emma.Model.Model_Subsets
             //Move all files in download to emmasdownloads/new
             for (int i = 0; i < downloadfiles.Length; i++) {
                 cur = downloadfiles[i];
-                loc = DownloadNew+"\\new";
+                loc = DownloadNew+"/new";
                 type = filetype(cur);
                 if (isFile(cur))               
                     MoveFile(loc,cur,type);
@@ -65,36 +62,24 @@ namespace Emma.Model.Model_Subsets
 
         //Find users download folder
         private void updateDirectries() {
-            string temp="";
-            int countBackslash = 0;
-            for (int i = 0; i < CurDirectory.Length; i++) {
-                if (CurDirectory[i]=='\\')
-                    countBackslash++;
-                if (countBackslash < 3)
-                    temp = temp + CurDirectory[i];
-                else
-                    break;
-            }
             //Assign locations
-            userfile = temp;
-            DownloadOrigin = userfile+"\\Downloads";
-            imageloc = userfile + "\\OneDrive\\Pictures";
+            DownloadOrigin = userDirectory+"/Downloads";
             try
             {
-                MakeFolder(userfile, "\\OneDrive\\Desktop\\EmmaDownloads");
-                MakeFolder(userfile, "\\OneDrive\\Desktop\\EmmaDownloads\\new");
-                DownloadNew = userfile + "\\OneDrive\\Desktop\\EmmaDownloads";
+                MakeFolder(desktopDirectory, "/EmmaDownloads");
+                MakeFolder(desktopDirectory, "/EmmaDownloads/new");
+                DownloadNew = desktopDirectory + "/EmmaDownloads";
             }
             catch {
-                DownloadNew = userfile + "\\Desktop\\EmmaDownloads";
+                DownloadNew = desktopDirectory + "/EmmaDownloads";
             }
             try
             {
                 //Check to make sure directories exist and work
                 folder_in = Directory.GetFiles(DownloadOrigin);
-                folder_in = Directory.GetFiles(imageloc);
                 folder_in = Directory.GetFiles(DownloadNew);
-                folder_in = Directory.GetFiles(DownloadNew + "\\new");
+                folder_in=Directory.GetFiles(PictureDirectory);
+                folder_in = Directory.GetFiles(DownloadNew + "/new");
                 organize();
             }
             catch(Exception e) {
@@ -141,7 +126,7 @@ namespace Emma.Model.Model_Subsets
 
         //Make folder
         private void MakeFolder(string dir, string type) {
-            Directory.CreateDirectory(dir + "\\" + type);
+            Directory.CreateDirectory(dir + "/" + type);
         }
 
         //Move file to correct folder
@@ -152,12 +137,12 @@ namespace Emma.Model.Model_Subsets
                 return;
             }
             for (int i = file.Length - 1; i > 0; i--) {
-                if (file[i] == '\\')
+                if (file[i] == '/')
                     break;
                 filename=file[i]+filename;
             }
             string from = file;
-            string to = dir+"\\"+filename;
+            string to = dir+"/"+filename;
             try
             {
                 File.Move(from, to);

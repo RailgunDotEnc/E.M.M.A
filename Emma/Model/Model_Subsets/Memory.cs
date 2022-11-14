@@ -12,8 +12,9 @@ namespace Emma.Model.Model_Subsets
         private string time;
         private settings settings;
         //constructor
-        public Memory(settings set)
+        public Memory(settings set,string dir)
         {
+            directory= dir;
             UpdateList();
             settings = set;
         }
@@ -21,14 +22,13 @@ namespace Emma.Model.Model_Subsets
         public void UpdateList()
         {
             //Get all files in stored Memory
-            string directory= System.AppContext.BaseDirectory.Replace("\\Emma\\bin\\Debug\\net6.0-windows", string.Empty);
-            saved_data = Directory.GetFiles(directory + @"\Emma\Data\Stored_Memory\");
+            saved_data = Directory.GetFiles(directory + "/Emma/Data/Stored_Memory/");
             //If files contain more then a week of data, delete file.
             if (saved_data.Length > 7)
             {
                 string[][] temp = new string[saved_data.Length][];
                 for (int i = 0; i < saved_data.Length; i++)
-                    temp[i] = saved_data[i].Replace(directory + @"\Emma\Data\Stored_Memory\Run_Data_", string.Empty).Replace(".txt",string.Empty).Split("_");
+                    temp[i] = saved_data[i].Replace(directory + "/Emma/Data/Stored_Memory/Run_Data_", string.Empty).Replace(".txt",string.Empty).Split("_");
                 bool change;
                 while (true)
                 {
@@ -73,14 +73,14 @@ namespace Emma.Model.Model_Subsets
             for (int i = 0; i < saved_data.Length; i++) {
                 if (saved_data[i].Contains(date)) {
                     file_exist = true;
-                    current_file = directory + "\\Emma\\Data\\Stored_Memory\\Run_Data_" + date + ".txt";
+                    current_file = directory + "/Emma/Data/Stored_Memory/Run_Data_" + date + ".txt";
                     File.AppendAllText(current_file, "\n"+time+": Starting run"+"\n");
                 }
             }
             //If file does not exist, create
             if (!file_exist) {
-                current_file = directory + "\\Emma\\Data\\Stored_Memory\\Run_Data_" + date + ".txt";
-                System.IO.StreamWriter writer = new System.IO.StreamWriter(directory + "\\Emma\\Data\\Stored_Memory\\Run_Data_" + date + ".txt");
+                current_file = directory + "/Emma/Data/Stored_Memory/Run_Data_" + date + ".txt";
+                System.IO.StreamWriter writer = new System.IO.StreamWriter(directory + "/Emma/Data/Stored_Memory/Run_Data_" + date + ".txt");
                 writer.Write(time+ ": Starting run"+"\n");
                 writer.Close();
                 saved_data[saved_data.Length - 1] = current_file;
@@ -96,7 +96,7 @@ namespace Emma.Model.Model_Subsets
             {
                 try
                 {
-                    current_file = directory + "\\Emma\\Data\\Stored_Memory\\Run_Data_" + date + ".txt";
+                    current_file = directory + "/Emma/Data/Stored_Memory/Run_Data_" + date + ".txt";
                     File.AppendAllText(current_file, time + ": " + value + "\n");
                     break;
                 }
